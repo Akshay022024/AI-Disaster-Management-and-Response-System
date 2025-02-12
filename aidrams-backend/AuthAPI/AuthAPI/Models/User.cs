@@ -1,15 +1,33 @@
-﻿using System;
+﻿
+    using System;
+    using System.ComponentModel.DataAnnotations;
 
-
-namespace AuthAPI.Models
-{
-    public class User
+    namespace AuthAPI.Models
     {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }  // Store hashed password
-        public string PasswordSalt { get; set; }  // Store salt for password verification
-        public DateTime DateOfBirth { get; set; }
+        public class User
+        {
+            [Key]
+            public int Id { get; set; }
+
+            [Required]
+            [MaxLength(100)]
+            public string Username { get; set; }
+
+            [Required]
+            [EmailAddress]
+            [MaxLength(255)]
+            public string Email { get; set; }
+
+            [Required]
+            public string PasswordHash { get; set; }
+
+            [Required]
+            public string PasswordSalt { get; set; }
+
+            [Required]
+            public DateTime DateOfBirth { get; set; }
+        }
     }
-}
+
+
+

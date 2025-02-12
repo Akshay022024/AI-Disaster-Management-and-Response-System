@@ -1,11 +1,16 @@
 ﻿using AuthAPI.Models;
+using AuthAPI.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using AuthAPI.Data;
 using System.Security.Cryptography;
-using System;
-using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
 
 namespace AuthAPI.Controllers
 {
@@ -14,102 +19,175 @@ namespace AuthAPI.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public AuthController(AppDbContext context)
+        public AuthController(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
-        // POST: api/auth/register
+        private string GenerateJwtToken(User user)
+        {
+            var key = Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]);
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                    new Claim("username", user.Username)
+                }),
+                Expires = DateTime.UtcNow.AddHours(1),
+                Issuer = _configuration["JwtSettings:Issuer"],
+                Audience = _configuration["JwtSettings:Audience"],
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
+
         [HttpPost("register")]
         public async Task<ActionResult> Register(RegisterDto registerDto)
         {
-            // Check if email already exists
             if (await _context.Users.AnyAsync(u => u.Email == registerDto.Email))
             {
-                return BadRequest("Email is already in use.");
+                return BadRequest(new { message = "Email is already in use." });
             }
 
-            // Hash the password and generate a salt
-            var hashedPassword = HashPassword(registerDto.Password, out string salt);
+            // Generate Salt
+            byte[] salt = new byte[16];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(salt);
+            }
+            string saltString = Convert.ToBase64String(salt);
 
-            // Create new user
+            // Hash the password
+            string hashedPassword = HashPassword(registerDto.Password, salt);
+
             var user = new User
             {
                 Username = registerDto.Username,
                 Email = registerDto.Email,
                 PasswordHash = hashedPassword,
-                PasswordSalt = salt,
+                PasswordSalt = saltString,
                 DateOfBirth = registerDto.DateOfBirth
             };
 
-            // Save user in database
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
+
+            var token = GenerateJwtToken(user);
+
+            // ✅ Fix for HTTP Cookie Settings
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = false, // ❌ Must be false for HTTP
+                SameSite = SameSiteMode.Lax, // ✅ Works better for HTTP
+                Expires = DateTime.UtcNow.AddHours(1)
+            };
+
+            Response.Cookies.Append("jwt", token, cookieOptions);
 
             return Ok(new { message = "User registered successfully." });
         }
 
-        // POST: api/auth/login
         [HttpPost("login")]
         public async Task<ActionResult> Login(LoginDto loginDto)
         {
-            // Find user by email
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
-            if (user == null)
+            if (user == null || !VerifyPassword(loginDto.Password, user.PasswordHash, user.PasswordSalt))
             {
-                return Unauthorized("Invalid email or password.");
+                return Unauthorized(new { message = "Invalid email or password." });
             }
 
-            // Verify password
-            if (!VerifyPassword(loginDto.Password, user.PasswordHash, user.PasswordSalt))
+            var token = GenerateJwtToken(user);
+
+            // ✅ Fix for HTTP Cookie Settings
+            var cookieOptions = new CookieOptions
             {
-                return Unauthorized("Invalid email or password.");
-            }
+                HttpOnly = true,
+                Secure = false, // ❌ Must be false for HTTP
+                SameSite = SameSiteMode.Lax, // ✅ Works better for HTTP
+                Expires = DateTime.UtcNow.AddHours(1)
+            };
+
+            Response.Cookies.Append("jwt", token, cookieOptions);
 
             return Ok(new { message = "Login successful." });
         }
 
-        // Utility method for password hashing
-        private string HashPassword(string password, out string salt)
+        [HttpGet("check-auth")]
+        public IActionResult CheckAuth()
         {
-            // Generate a secure random salt (16 bytes)
-            byte[] saltBytes = new byte[16];
-            using (var rng = RandomNumberGenerator.Create())
+            var token = Request.Cookies["jwt"];
+
+            if (string.IsNullOrEmpty(token))
             {
-                rng.GetBytes(saltBytes);
+                return Unauthorized(new { message = "No JWT token found in cookies." });
             }
 
-            // Convert salt to Base64 to store in DB
-            salt = Convert.ToBase64String(saltBytes);
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]);
 
-            // Hash the password using PBKDF2 with the generated salt
-            return Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: saltBytes,
-                prf: KeyDerivationPrf.HMACSHA256,
-                iterationCount: 10000,
-                numBytesRequested: 32 // 256-bit key length
-            ));
+                var parameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = _configuration["JwtSettings:Issuer"],
+                    ValidateAudience = true,
+                    ValidAudience = _configuration["JwtSettings:Audience"],
+                    ValidateLifetime = true
+                };
+
+                var principal = tokenHandler.ValidateToken(token, parameters, out SecurityToken validatedToken);
+
+                return Ok(new { message = "User is authenticated.", user = principal.Identity.Name });
+            }
+            catch (SecurityTokenException ex)
+            {
+                return Unauthorized(new { message = "Invalid token.", error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred.", error = ex.Message });
+            }
         }
 
-        // Utility method to verify password
-        private bool VerifyPassword(string inputPassword, string storedHash, string storedSalt)
-        {
-            // Convert stored salt from Base64 to byte array
-            byte[] saltBytes = Convert.FromBase64String(storedSalt);
 
-            // Hash the input password with the stored salt
-            string hashedInput = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: inputPassword,
-                salt: saltBytes,
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("jwt");
+            return Ok(new { message = "Logged out successfully." });
+        }
+
+        // Utility method to hash passwords
+        private string HashPassword(string password, byte[] salt)
+        {
+            return Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: password,
+                salt: salt,
                 prf: KeyDerivationPrf.HMACSHA256,
                 iterationCount: 10000,
                 numBytesRequested: 32
             ));
+        }
 
-            // Compare hashes
-            return hashedInput == storedHash;
+        // Utility method to verify passwords
+        private bool VerifyPassword(string inputPassword, string storedHash, string storedSalt)
+        {
+            byte[] salt = Convert.FromBase64String(storedSalt);
+            string hashedInput = HashPassword(inputPassword, salt);
+            return storedHash == hashedInput;
         }
     }
 }

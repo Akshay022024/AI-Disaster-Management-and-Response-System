@@ -170,4 +170,11 @@ C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\obj\Debu
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\obj\Debug\net8.0\AuthAPI.pdb
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\obj\Debug\net8.0\AuthAPI.genruntimeconfig.cache
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\obj\Debug\net8.0\ref\AuthAPI.dll
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\EntityFramework.dll
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

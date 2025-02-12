@@ -3,6 +3,6 @@
     public class LoginDto
     {
         public string Email { get; set; }
-        public string Password { get; set; }  // Plain text password for login
+        public string Password { get; set; }  // User enters plain password for login
     }
 }
