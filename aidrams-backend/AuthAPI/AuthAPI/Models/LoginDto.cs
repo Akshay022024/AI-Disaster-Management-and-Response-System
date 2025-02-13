@@ -2,7 +2,7 @@
 {
     public class LoginDto
     {
-        public string Email { get; set; }
-        public string Password { get; set; }  // User enters plain password for login
+        public string EmailOrUsername { get; set; } // ✅ Accepts email OR username
+        public string Password { get; set; }
     }
 }

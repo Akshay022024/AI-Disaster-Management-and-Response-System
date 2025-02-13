@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,6 +7,28 @@ const API_BASE_URL = "https://localhost:7097";
 function Home({ setUser }) {
   const navigate = useNavigate();
   const [view, setView] = useState("posts");
+  const [user, setUserData] = useState({ username: "", profilePicture: "" });
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/api/Auth/check-auth`, {
+          withCredentials: true,
+        });
+        setUserData({
+          username: response.data.user.username,
+          profilePicture: response.data.user.profilePicture || "src/assets/logo.png", // Fallback image
+        });
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        setUser(false);
+        localStorage.removeItem("isAuthenticated");
+        navigate("/login");
+      }
+    };
+
+    fetchUser();
+  }, [setUser, navigate]);
 
   const handleLogout = async () => {
     await axios.post(`${API_BASE_URL}/api/Auth/logout`, {}, { withCredentials: true });
@@ -14,7 +36,7 @@ function Home({ setUser }) {
     localStorage.removeItem("isAuthenticated");
     navigate("/login");
   };
-
+  
   return (
     <div style={styles.homeContainer}>
       {/* Left Sidebar */}
@@ -55,13 +77,21 @@ function Home({ setUser }) {
 
       {/* Right Sidebar */}
       <aside style={styles.rightSidebar}>
-        <div style={styles.accountInfo}>@UserHandle</div>
+        <div style={styles.accountInfo}>
+          <img 
+            src={user.profilePicture} 
+            alt="Profile" 
+            style={{ width: "40px", height: "40px", borderRadius: "50%", marginRight: "10px" }} 
+          />
+          @{user.username}
+        </div>
         <div style={styles.extraContent}>Emergency Contacts & Resources</div>
         <button style={styles.logoutButton} onClick={handleLogout}>Logout</button>
       </aside>
     </div>
   );
 }
+
 
 // Modern, unique styles
 const styles = {

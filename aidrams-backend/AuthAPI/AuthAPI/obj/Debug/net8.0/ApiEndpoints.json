@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "AuthAPI.Controllers.AuthController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Auth/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "forgotPasswordDto",
+        "Type": "AuthAPI.Models.ForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthAPI.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -46,6 +62,27 @@
       {
         "Name": "registerDto",
         "Type": "AuthAPI.Models.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthAPI.Controllers.AuthController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Auth/update-profile/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "profileDto",
+        "Type": "AuthAPI.Models.UpdateProfileDto",
         "IsRequired": true
       }
     ],

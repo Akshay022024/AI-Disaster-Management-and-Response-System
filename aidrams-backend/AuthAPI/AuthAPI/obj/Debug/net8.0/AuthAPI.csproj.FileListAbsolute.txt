@@ -176,5 +176,5 @@ C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debu
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\aksha\OneDrive\Desktop\AIDRAMS\aidrams-backend\AuthAPI\AuthAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

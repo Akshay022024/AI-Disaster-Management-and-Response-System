@@ -169,3 +169,50 @@ a:hover {
     padding: 20px;
   }
 }
+
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 404 Page */
+.not-found {
+  text-align: center;
+  padding: 50px;
+}
+
+.not-found h1 {
+  font-size: 2rem;
+  color: red;
+}
+
+.not-found p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.not-found a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
