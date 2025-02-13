@@ -10,11 +10,11 @@ I have completed the **authentication system** and the **home page**. Below is a
 
 ### 🔹 Authentication System  
 ![Auth System](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-13%20231959.png)
-)  
+
 
 ### 🔹 Home Page  
-![Home Page](assets/images/home-page.png)  
-*(Replace this with your actual image path once available)*  
+![Home Page](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-13%20232023.png)  
+
 
 ## 🛠️ Next Steps  
 - Implement **real-time disaster updates**  
