@@ -9,7 +9,7 @@
 I have completed the **authentication system** and the **home page**. Below is a preview of the progress:  
 
 ### 🔹 Authentication System  
-![Auth System](assets/images/auth-system.png)  
+![Auth System](/Screenshot 2025-02-13 231959.png)  
 *(Replace this with your actual image path once available)*  
 
 ### 🔹 Home Page  
