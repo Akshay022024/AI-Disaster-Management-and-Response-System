@@ -10,6 +10,9 @@ I have completed the **authentication system** and the **home page**. Below is a
 
 ### 🔹 Authentication System  
 ![Auth System](assets/images/home-page.png)  
+## 📸 Preview
+![SecureAuth Screenshot](![Screenshot 2025-02-10 124752](https://github.com/user-attachments/assets/c1130408-a85a-469f-aa6f-779765079c4f)
+)  
 
 ### 🔹 Home Page  
 ![Home Page](assets/images/home-page.png)  
