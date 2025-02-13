@@ -29,4 +29,4 @@ I’ll keep updating this README as I make progress. Follow the repository for t
 ### 📜 How to Run the Project  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System.git
