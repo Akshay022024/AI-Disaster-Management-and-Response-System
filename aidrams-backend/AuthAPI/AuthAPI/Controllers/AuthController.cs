@@ -8,9 +8,8 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace AuthAPI.Controllers
 {
@@ -83,12 +82,12 @@ namespace AuthAPI.Controllers
 
             var token = GenerateJwtToken(user);
 
-            // ✅ Fix for HTTP Cookie Settings
+            // ✅ Set Secure HTTP Cookie
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Secure = false, // ❌ Must be false for HTTP
-                SameSite = SameSiteMode.Lax, // ✅ Works better for HTTP
+                Secure = false, // ❌ Set to 'true' if using HTTPS
+                SameSite = SameSiteMode.Lax,
                 Expires = DateTime.UtcNow.AddHours(1)
             };
 
@@ -108,12 +107,12 @@ namespace AuthAPI.Controllers
 
             var token = GenerateJwtToken(user);
 
-            // ✅ Fix for HTTP Cookie Settings
+            // ✅ Fix: Ensure JWT persists
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Secure = false, // ❌ Must be false for HTTP
-                SameSite = SameSiteMode.Lax, // ✅ Works better for HTTP
+                Secure = false,
+                SameSite = SameSiteMode.Lax,
                 Expires = DateTime.UtcNow.AddHours(1)
             };
 
@@ -150,18 +149,18 @@ namespace AuthAPI.Controllers
 
                 var principal = tokenHandler.ValidateToken(token, parameters, out SecurityToken validatedToken);
 
-                return Ok(new { message = "User is authenticated.", user = principal.Identity.Name });
+                var claims = principal.Claims.ToDictionary(c => c.Type, c => c.Value);
+                return Ok(new { message = "User is authenticated.", user = claims });
             }
-            catch (SecurityTokenException ex)
+            catch (SecurityTokenException)
             {
-                return Unauthorized(new { message = "Invalid token.", error = ex.Message });
+                return Unauthorized(new { message = "Invalid token." });
             }
             catch (Exception ex)
             {
                 return StatusCode(500, new { message = "An error occurred.", error = ex.Message });
             }
         }
-
 
         [HttpPost("logout")]
         public IActionResult Logout()

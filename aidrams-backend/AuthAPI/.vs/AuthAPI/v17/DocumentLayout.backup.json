@@ -50,8 +50,7 @@
               "RelativeToolTip": "AuthAPI\\Models\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:52:09.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T14:52:09.527Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "AuthAPI\\Models\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T11:54:34.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T11:54:34.336Z"
             },
             {
               "$type": "Document",
@@ -74,7 +72,7 @@
               "RelativeDocumentMoniker": "AuthAPI\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "AuthAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T11:50:43.506Z",
               "EditorCaption": ""
@@ -113,8 +111,7 @@
               "RelativeToolTip": "AuthAPI\\Models\\User.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwAkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T06:00:23.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-02T06:00:23.752Z"
             },
             {
               "$type": "Document",
@@ -126,8 +123,7 @@
               "RelativeToolTip": "AuthAPI\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T06:03:31.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-02T06:03:31.899Z"
             }
           ]
         }

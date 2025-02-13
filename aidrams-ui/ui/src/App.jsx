@@ -6,30 +6,36 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import "./App.css";
 
+
 const API_BASE_URL = "https://localhost:7097";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("isAuthenticated") === "true" // ✅ Restore auth state
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const checkAuth = async () => {
-      try {
-        const res = await axios.get(`${API_BASE_URL}/api/Auth/check-auth`, {
-          withCredentials: true, // ✅ Ensures cookies are sent
-        });
-        if (res.status === 200) {
-          setIsAuthenticated(true);
+      if (!isAuthenticated) {
+        try {
+          const res = await axios.get(`${API_BASE_URL}/api/Auth/check-auth`, {
+            withCredentials: true, // ✅ Ensures cookies are sent
+          });
+          if (res.status === 200) {
+            setIsAuthenticated(true);
+            localStorage.setItem("isAuthenticated", "true"); // ✅ Persist auth state
+          }
+        } catch (err) {
+          setIsAuthenticated(false);
+          localStorage.removeItem("isAuthenticated"); // ✅ Ensure it's removed on failure
         }
-      } catch (err) {
-        setIsAuthenticated(false);
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     };
 
     checkAuth();
-  }, []);
+  }, [isAuthenticated]);
 
   if (loading) {
     return <h2>Loading...</h2>;
