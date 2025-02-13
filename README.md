@@ -9,8 +9,7 @@
 I have completed the **authentication system** and the **home page**. Below is a preview of the progress:  
 
 ### 🔹 Authentication System  
-![Auth System](AI-Disaster-Management-and-Response-System
-/Screenshot 2025-02-13 231959.png)  
+![Auth System](assets/images/home-page.png)  
 
 ### 🔹 Home Page  
 ![Home Page](assets/images/home-page.png)  
