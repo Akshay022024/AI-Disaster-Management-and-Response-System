@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|c:\\users\\aksha\\onedrive\\desktop\\aidrams\\aidrams-backend\\authapi\\authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|c:\\users\\aksha\\onedrive\\desktop\\aidrams\\aidrams-backend\\authapi\\authapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|c:\\users\\aksha\\onedrive\\desktop\\aidrams\\aidrams-backend\\authapi\\authapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|c:\\users\\aksha\\onedrive\\desktop\\aidrams\\aidrams-backend\\authapi\\authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1152DF2-8912-4A3C-BCAE-C02AD1BDC926}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,24 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20250213170631_updatedmodelsWithSettings.cs",
-              "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
-              "ToolTip": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
-              "RelativeToolTip": "AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T17:07:02.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ForgotPasswordDto.cs",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Models\\ForgotPasswordDto.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Models\\ForgotPasswordDto.cs",
@@ -79,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "UpdateProfileDto.cs",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Models\\UpdateProfileDto.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Models\\UpdateProfileDto.cs",
@@ -91,20 +78,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "AuthAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAowJUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAIQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T11:50:43.506Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Models\\User.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Models\\User.cs",
@@ -112,12 +99,11 @@
               "RelativeToolTip": "AuthAPI\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T06:00:23.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-02T06:00:23.752Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Models\\LoginDto.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Models\\LoginDto.cs",
@@ -125,12 +111,36 @@
               "RelativeToolTip": "AuthAPI\\Models\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:52:09.527Z",
+              "WhenOpened": "2025-02-03T14:52:09.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Program.cs",
+              "RelativeDocumentMoniker": "AuthAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Program.cs",
+              "RelativeToolTip": "AuthAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T06:36:24.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "20250213170631_updatedmodelsWithSettings.cs",
+              "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
+              "RelativeDocumentMoniker": "AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
+              "ToolTip": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
+              "RelativeToolTip": "AuthAPI\\Migrations\\20250213170631_updatedmodelsWithSettings.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T17:07:02.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Models\\RegisterDto.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Models\\RegisterDto.cs",
@@ -142,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\appsettings.json",
               "RelativeDocumentMoniker": "AuthAPI\\appsettings.json",
@@ -155,18 +165,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Program.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Program.cs",
-              "RelativeToolTip": "AuthAPI\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T06:36:24.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\aksha\\OneDrive\\Desktop\\AIDRAMS\\aidrams-backend\\AuthAPI\\AuthAPI\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Data\\AppDbContext.cs",

@@ -23,7 +23,7 @@ function Home({ setUser }) {
         console.error("Error fetching user:", error);
         setUser(false);
         localStorage.removeItem("isAuthenticated");
-        navigate("/login");
+        navigate("/login");                                                                                                     
       }
     };
 
@@ -41,7 +41,7 @@ function Home({ setUser }) {
     <div style={styles.homeContainer}>
       {/* Left Sidebar */}
       <aside style={styles.leftSidebar}>
-        <div style={styles.logo}>🌍 AI-DMR</div>
+        <div style={styles.logo}>🌍 AIDRAMS</div>
         <nav>
           <ul style={styles.navMenu}>
             <li style={styles.navItem}>Dashboard</li>
