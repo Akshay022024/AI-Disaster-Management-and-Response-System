@@ -13,7 +13,7 @@ I have completed the **authentication system** and the **home page**. Below is a
 
 
 ### 🔹 Home Page  
-![Home Page](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-13%20232023.png)  
+![Home Page](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-21%20172508.png)  
 
 
 ## 🛠️ Next Steps  
