@@ -19,7 +19,7 @@ I have completed the **authentication system** and the **home page**. Below is a
 ![Database Schema](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-23%20181144.png)  
 
 ### 🔹 API Endpoints  
-![API Usage](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/your-api-image.png)  
+![API Usage](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-23%20181158.png)  
 
 ## 🛠️ Next Steps  
 - Implement **real-time disaster updates**  
