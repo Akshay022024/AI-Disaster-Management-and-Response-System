@@ -16,7 +16,7 @@ I have completed the **authentication system** and the **home page**. Below is a
 ![Home Page](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-21%20172508.png)  
 
 ### 🔹 Database Schema & Tables  
-![Database Schema](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/your-database-schema-image.png)  
+![Database Schema](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/Screenshot%202025-02-23%20181144.png)  
 
 ### 🔹 API Endpoints  
 ![API Usage](https://github.com/Akshay022024/AI-Disaster-Management-and-Response-System/blob/main/your-api-image.png)  
